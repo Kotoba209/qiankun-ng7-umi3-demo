@@ -1,0 +1,49 @@
+{
+  "private": true,
+  "name": "micro-child-app1",
+  "scripts": {
+    "start": "umi dev",
+    "dev": "cross-env MOCK=none PORT=8899 SOCKET_SERVER=none umi dev",
+    "build": "umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^7.16.1",
+    "@umijs/plugin-qiankun": "^2.43.3",
+    "add": "^2.0.6",
+    "antd": "^5.7.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "umi": "^3.5.41",
+    "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.5.41",
+    "cross-env": "^7.0.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.0",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0"
+  },
+  "resolutions": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0"
+  }
+}
